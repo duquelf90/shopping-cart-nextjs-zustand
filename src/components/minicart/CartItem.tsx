@@ -6,8 +6,8 @@ import { useCartStore } from "../../stores/useCartStore";
 
 interface Props {
   product: Product;
-  incrementItem: (item: Product) => void;
-  decrementItem: (item: Product) => void;
+  incrementItem?: (item: Product) => void;
+  decrementItem?: (item: Product) => void;
 }
 
 export default function CartItem({
@@ -34,8 +34,10 @@ export default function CartItem({
         </div>
       </div>
       <div>
-	  <button onClick={() => decrementItem(product)} className='mr-2'>-</button>
-	  <button onClick={() => incrementItem(product)} className='ml-2'>+</button>
+      <div>
+        {incrementItem && <button onClick={() => incrementItem(product)}>+</button>}
+        {decrementItem && <button onClick={() => decrementItem(product)}>-</button>}
+      </div>
         <button
           title="Remove Item"
           className="text-red-500 hover:text-red-600 ml-4"

@@ -15,7 +15,6 @@ export default function ProductCard({ product }: Props) {
 
   const handleAddToCart = () => {
     addToCart(product, addNotification);
-    // addNotification(`${product.title} ha sido añadido al carrito.`); // Notificación
   };
 
   return (

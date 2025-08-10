@@ -14,7 +14,7 @@ export const NotificationProvider: React.FC<{ children: React.ReactNode }> = ({ 
     setNotifications(prev => [...prev, message]);
     setTimeout(() => {
       setNotifications(prev => prev.filter((_, index) => index !== 0));
-    }, 5000);
+    }, 3000);
   };
   const handleClose = (index: number) => {
     setNotifications(prev => prev.filter((_, i) => i !== index));

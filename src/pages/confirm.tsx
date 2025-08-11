@@ -10,24 +10,22 @@ const ConfirmPage = () => {
         <p className="text-lg text-center mb-4">
         Gracias por tu compra. Tu pedido ha sido procesado con éxito.
       </p>
-      <ul className="grid sm:grid-cols-4">
-        <li className="w-full">
-          Número de pedido: <strong>numero</strong>
+      <ul className="grid sm:grid-cols-4 mb-5 [ul:li:span:mr-2]">
+        <li className="flex md:flex-col w-full">
+          Número de pedido: <strong className="ml-2">numero</strong>
         </li>
-        <li>
-          Fecha: <strong>fecha</strong>
+        <li className="flex md:flex-col w-full">
+          Fecha: <strong className="ml-2">fecha</strong>
         </li>
-        <li>
+        <li className="flex md:flex-col w-full">
           Total:{" "}
-          <strong>
+          <strong className="ml-2">
             <span>
-              <bdi>
                 total<span>$</span>
-              </bdi>
             </span>
           </strong>
         </li>
-        <li>
+        <li className="flex flex-col w-full">
           Método de pago:{" "}
           <strong>Pagos para clientes de EEUU por vía Zelle</strong>
         </li>
@@ -61,7 +59,7 @@ const ConfirmPage = () => {
       <p>
         Una vez realizada la transferencia envíe una captura a nuestro WhatsApp
         al número{" "}
-        <a href="https://wa.me/13055466008" target="_blank">
+        <a href="https://wa.me/13055466008" target="_blank" rel="noopener">
           +1 305 546-6008
         </a>
       </p>
@@ -69,7 +67,7 @@ const ConfirmPage = () => {
         <b>Verificación y Contacto:</b>
         <br />
         Puede contactar por WhatsApp al número{" "}
-        <a href="https://wa.me/13055466008" target="_blank">
+        <a href="https://wa.me/13055466008" target="_blank" rel="noopener">
           +1 305 546-6008
         </a>
         , o nuestro equipo de administración te contactará dentro de las

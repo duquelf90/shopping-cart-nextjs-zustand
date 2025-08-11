@@ -1,14 +1,29 @@
 export interface Product {
 	id: number
-	title: string
+	name: string
 	description: string
 	price: number
-	discountPercentage: number
-	rating: number
 	stock: number
 	brand: string
-	category: string
+	category: string[]
 	thumbnail: string
 	images: string[]
-	quantity?: number
+	quantity: number
 }
+
+export interface CustomerData {
+	fullName: string;
+	address: string;
+	phone: string;
+	email: string;
+}
+
+export interface RecipientData {
+	fullName: string;
+	address: string;
+	phone: string;
+	province: string;
+	notes: string;
+}
+
+

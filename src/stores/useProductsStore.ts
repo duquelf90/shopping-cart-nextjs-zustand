@@ -25,11 +25,18 @@ export const useProductsStore = create<State & Actions>(set => ({
 	fetchData: async () => {
 		try {
 			set({ isLoading: true, error: null })
-			const response = await fetch("https://dummyjson.com/products")
+			const response = await fetch("https://127.0.0.1:8000/api/products")
+
+			// Manejo de respuestas no exitosas
+			if (!response.ok) {
+				const errorMessage = `Error: ${response.status} ${response.statusText}`;
+				throw new Error(errorMessage);
+			  }
 			const data = await response.json()
 			set({ products: data.products, isLoading: false })
 		} catch (error) {
-			set({ error, isLoading: false })
+			const errorMessage = error instanceof Error ? error.message : "Error desconocido";
+			set({ error: errorMessage, isLoading: false });
 		}
 	},
 }))

@@ -35,7 +35,7 @@ const Layout: React.FC<LayoutProps> = ({ title, children }) => {
         <Drawer isOpen={isDrawerOpen} onCartIconClick={handleCartIconClick}>
           <Cart />
         </Drawer>
-        <main className="pb-20">
+        <main className="pb-10">
           <div className="max-w-frame mx-auto px-4 xl:px-0 py-5">{children}</div></main>
         <Footer />
       </NotificationProvider>

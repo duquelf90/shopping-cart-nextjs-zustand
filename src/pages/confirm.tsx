@@ -4,9 +4,10 @@ import React from "react";
 
 const ConfirmPage = () => {
   return (
-    <div className="flex flex-col justify-center h-screen bg-gray-100 p-5">
-      <h1 className="text-4xl font-bold mb-4">¡Pedido Confirmado!</h1>
-      <p className="text-lg text-center mb-4">
+    <div className="flex flex-col justify-center p-5">
+      <h1 className="text-4xl font-bold mb-4 text-center">¡Pedido Confirmado!</h1>
+      <div className="pb-5">
+        <p className="text-lg text-center mb-4">
         Gracias por tu compra. Tu pedido ha sido procesado con éxito.
       </p>
       <ul className="grid sm:grid-cols-4">
@@ -86,9 +87,11 @@ const ConfirmPage = () => {
         cliente está a tu disposición para asistirte en todo momento.
         Contáctanos a través de nuestros canales de soporte.
       </p>
+      </div>
+      
       <button
         onClick={() => (window.location.href = "/")}
-        className="mt-6 px-6 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 w-1/2 items-center"
+        className="mx-auto bg-black w-1/2 rounded-full h-11 md:h-[52px] text-sm sm:text-base text-white hover:bg-black/80 transition-all"
       >
         Regresar a la tienda
       </button>

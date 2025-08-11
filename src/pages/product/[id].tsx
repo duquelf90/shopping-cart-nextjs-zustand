@@ -7,17 +7,17 @@ import { useEffect } from "react";
 
 const ProductDetailPage = () => {
   const router = useRouter();
-  const { id } = router.query; // Obtiene el ID del producto de la URL
+  const { id } = router.query; 
   const { products, fetchData } = useProductsStore();
 
   useEffect(() => {
     fetchData();
   }, [fetchData]);
 
-  const product = products.find((p) => p.id.toString() === id); // Busca el producto por ID
+  const product = products.find((p) => p.id.toString() === id);
 
   if (!product) {
-    return <div>Cargando...</div>; // Muestra un loader mientras se carga el producto
+    return <div>Cargando...</div>; 
   }
 
   return (

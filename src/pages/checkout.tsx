@@ -139,22 +139,22 @@ const Checkout = () => {
         <h3 className="text-xl md:text-2xl font-bold text-black">
           Resumen de tu Pedido
         </h3>
-        <table>
+        <table className="w-full">
           <thead>
-            <tr>
-              <th>Producto</th>
-              <th>Subtotal</th>
+            <tr >
+              <th className="flex justify-start">Producto</th>
+              <th className="text-right">Subtotal</th>
             </tr>
           </thead>
           <tbody>
             {cart.map((product) => (
               <tr key={product.id}>
-                <td className="flex justify-between">
+                <td>
                   <span>
                     {product.title} (x{product.quantity})
                   </span>
                 </td>
-                <td>
+                <td className="text-right">
                   <strong>{product.price * product?.quantity}$</strong>
                 </td>
               </tr>
@@ -170,7 +170,7 @@ const Checkout = () => {
         </p>
         <button
           type="submit"
-          className="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 w-full"
+          className="bg-black w-full rounded-full h-11 md:h-[52px] text-sm sm:text-base text-white hover:bg-black/80 transition-all"
         >
           Realizar el pedido
         </button>

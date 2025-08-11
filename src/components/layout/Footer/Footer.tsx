@@ -43,7 +43,7 @@ const Footer = () => {
         <div className="max-w-frame mx-auto">
           <nav className="lg:grid lg:grid-cols-12 mb-8">
             <div className="flex flex-col lg:col-span-3 lg:max-w-[248px]">
-              <h1 className="text-[28px] lg:text-[32px] mb-6">SHOP.CO</h1>
+              <h1 className="text-[28px] lg:text-[32px] mb-6">MiTienda</h1>
               <p className="text-black/60 text-sm mb-9">
                 Tu multimarket de confianza en Cuba. Productos de primera
                 necesidad para toda la familia con la mejor calidad y servicio.
@@ -70,14 +70,14 @@ const Footer = () => {
           <hr className="h-[1px] border-t-black/10 mb-6" />
           <div className="flex flex-col sm:flex-row justify-center sm:justify-between items-center mb-2">
             <p className="text-sm text-center sm:text-left text-black/60 mb-4 sm:mb-0 sm:mr-1">
-              Shop.co © Made by{" "}
+              MiTienda © hecho por{" "}
               <Link
-                href="https://github.com/mohammadoftadeh"
+                href="https://yaenlineasoft.com"
                 className="text-black font-medium"
               >
                 YaenLineaSoft LLC
               </Link>
-              con
+              
             </p>
             <div className="flex items-center">
               {paymentBadgesData.map((badge, _, arr) => (

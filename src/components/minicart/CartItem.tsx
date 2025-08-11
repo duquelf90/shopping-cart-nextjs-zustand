@@ -19,7 +19,7 @@ export default function CartItem({
   return (
     <li className="flex justify-between items-center gap-4  mb-2 shadow-md p-4">
       <div className="flex items-center">
-        <Image
+        <img
           src={product.thumbnail}
           alt={product.name}
           width={100}

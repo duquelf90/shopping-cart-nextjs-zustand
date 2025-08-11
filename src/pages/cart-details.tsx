@@ -83,6 +83,8 @@ const CartDetails = () => {
             <Link
               href="/checkout"
               className="inline-flex items-center justify-center whitespace-nowrap transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 text-primary-foreground shadow hover:bg-primary/90 px-4 text-sm md:text-base font-medium bg-black rounded-full w-full py-4 h-[54px] md:h-[60px] group text-white"
+              aria-disabled={cart?.length === 0 ? "true" : "false"}
+              tabIndex={cart?.length === 0 ? -1 : 0}
             >
               Finalizar compra
             </Link>

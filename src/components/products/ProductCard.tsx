@@ -19,13 +19,13 @@ export default function ProductCard({ product }: Props) {
 
   return (
     <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl flex flex-col justify-between p-4 ">
-      {/* <Image
+      <img
         src={product.images[0]}
         alt={product.name}
         width={100}
         height={100}
         className="object-contain w-full h-40"
-      /> */}
+      />
       <div className="p-4">
         <div className="flex justify-between items-start mb-2">
           <h2 className="text-lg font-semibold text-gray-900 line-clamp-1 hover:text-blue-600 transition-colors cursor-pointer">

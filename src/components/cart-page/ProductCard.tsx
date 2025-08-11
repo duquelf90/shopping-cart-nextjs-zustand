@@ -25,7 +25,7 @@ export const ProductCard = ({
         // href={`/shop/product/${data.id}/${data.name.split(" ").join("-")}`}
         className="bg-[#F0EEED] rounded-lg w-full min-w-[100px] max-w-[100px] sm:max-w-[124px] aspect-square overflow-hidden"
       >
-        <Image
+        <img
           src={product.thumbnail}
           alt={product.name}
           width={124}

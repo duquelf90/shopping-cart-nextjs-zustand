@@ -1,6 +1,5 @@
 import React from "react";
 import PhotoSection from "./PhotoSection";
-import { cn } from "@/lib/utils";
 import { Product } from "@/types";
 import AddToCardSection from "./AddToCardSection";
 

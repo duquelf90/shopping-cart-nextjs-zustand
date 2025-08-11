@@ -25,7 +25,7 @@ const ProductDetailPage = () => {
       <section className="mb-11">
         <Header data={product} />
       </section>
-      <ProductListSec title="You might also like" data={products} />
+      <ProductListSec title="Te puede interesar" data={products} />
     </div>
   );
 };

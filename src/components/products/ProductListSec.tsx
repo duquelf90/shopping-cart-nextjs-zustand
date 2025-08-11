@@ -24,7 +24,7 @@ const ProductListSec = ({ title, data, viewAllLink }: ProductListSecProps) => {
         whileInView={{ y: "0", opacity: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
-        className="text-[32px] md:text-5xl mb-8 md:mb-14 capitalize"
+        className="text-[32px] md:text-5xl mb-8 md:mb-14"
       >
         {title}
       </motion.h2>
@@ -57,7 +57,7 @@ const ProductListSec = ({ title, data, viewAllLink }: ProductListSecProps) => {
               href={viewAllLink}
               className="w-full inline-block sm:w-[218px] px-[54px] py-4 border rounded-full hover:bg-black hover:text-white text-black transition-all font-medium text-sm sm:text-base border-black/10"
             >
-              View All
+              Ver todo
             </Link>
           </div>
         )}

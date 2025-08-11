@@ -22,7 +22,7 @@ export default function ProductCard({ product }: Props) {
 
   return (
     <div className="flex flex-col items-start aspect-auto">
-      <div className="bg-[#F0EEED] rounded-[13px] lg:rounded-[20px] w-full lg:max-w-[295px] aspect-square mb-2.5 xl:mb-4 overflow-hidden">
+      <Link href={`/product/${product.id}`} className="bg-[#F0EEED] rounded-[13px] lg:rounded-[20px] w-full lg:max-w-[295px] aspect-square mb-2.5 xl:mb-4 overflow-hidden">
         <img
           src={product.images[0]}
           alt={product.title}
@@ -30,7 +30,7 @@ export default function ProductCard({ product }: Props) {
           height={100}
           className="rounded-md w-full h-full object-contain hover:scale-110 transition-all duration-500"
         />
-      </div>
+      </Link>
       <strong className="text-black xl:text-lg">{product.title}</strong>
       <div className="flex items-center w-full space-x-[5px] xl:space-x-2.5 mt-2 justify-between">
         <span className="font-bold text-black text-xl xl:text-2xl">

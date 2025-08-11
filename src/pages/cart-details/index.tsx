@@ -27,16 +27,12 @@ const CartDetails = () => {
           <div className="flex flex-col lg:flex-row space-y-5 lg:space-y-0 lg:space-x-5 items-start">
             <div className="w-full p-3.5 md:px-6 flex-col space-y-4 md:space-y-6 rounded-[20px] border border-black/10">
               {cart?.map((product) => (
-                <>
-                  <ProductCard
-                    key={product.id}
-                    product={product}
-                    incrementItem={incrementItem}
-                    decrementItem={decrementItem}
-                  />
-                  
-                  {/* <hr className="border-t-black/10"></hr> */}
-                </>
+                <ProductCard
+                  key={product.id}
+                  product={product}
+                  incrementItem={incrementItem}
+                  decrementItem={decrementItem}
+                />
               ))}
             </div>
             {/* order sumary */}
@@ -52,7 +48,9 @@ const CartDetails = () => {
                   </span>
                 </div>
                 <div className="flex items-center justify-between">
-                  <span className="md:text-xl text-black/60">Gastos de envio</span>
+                  <span className="md:text-xl text-black/60">
+                    Gastos de envio
+                  </span>
                   <span className="md:text-xl font-bold">Gratis</span>
                 </div>
                 <hr className="border-t-black/10" />
@@ -80,11 +78,8 @@ const CartDetails = () => {
       ) : (
         <div className="flex items-center flex-col text-gray-300 mt-32">
           <Icon icon="tabler:basket-x" className="text-6xl w-12 h-12"></Icon>
-          {/* <TbBasketExclamation strokeWidth={1} className="text-6xl" /> */}
           <span className="block mb-4">Tu carrito esta vacio.</span>
-          {/* <Button className="rounded-full w-24" asChild> */}
           <Link href="/shop">Shop</Link>
-          {/* </Button> */}
         </div>
       )}
 

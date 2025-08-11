@@ -8,6 +8,12 @@ module.exports = {
   darkMode: false,
   theme: {
     extend: {
+      width: {
+        frame: "77.5rem",
+      },
+      maxWidth: {
+        frame: "77.5rem",
+      },
     }
   },
   variants: {

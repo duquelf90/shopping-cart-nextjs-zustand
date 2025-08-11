@@ -1,6 +1,6 @@
 import { create } from "zustand"
 
-import { Product } from "../types"
+import { Product } from "../../types"
 
 interface State {
 	products: Product[]
@@ -25,7 +25,8 @@ export const useProductsStore = create<State & Actions>(set => ({
 	fetchData: async () => {
 		try {
 			set({ isLoading: true, error: null })
-			const response = await fetch("https://127.0.0.1:8000/api/products")
+			const response = await fetch("https://dummyjson.com/products")
+			// const response = await fetch("https://127.0.0.1:8000/api/products")
 
 			// Manejo de respuestas no exitosas
 			if (!response.ok) {

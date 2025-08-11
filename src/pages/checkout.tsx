@@ -1,4 +1,4 @@
-import { useCartStore } from "@/stores/useCartStore";
+import { useCartStore } from "@/lib/stores/useCartStore";
 import React, { useState } from "react";
 import axios from "axios";
 import { useRouter } from "next/router";
@@ -151,7 +151,7 @@ const Checkout = () => {
               <tr key={product.id}>
                 <td className="flex justify-between">
                   <span>
-                    {product.name} (x{product.quantity})
+                    {product.title} (x{product.quantity})
                   </span>
                 </td>
                 <td>

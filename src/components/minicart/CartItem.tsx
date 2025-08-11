@@ -1,6 +1,6 @@
 import { Product } from "../../types.d";
 import Image from "next/image";
-import { useCartStore } from "@/stores/useCartStore";
+import { useCartStore } from "@/lib/stores/useCartStore";
 import { Icon } from "@iconify/react";
 
 interface Props {

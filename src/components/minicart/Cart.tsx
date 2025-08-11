@@ -1,8 +1,8 @@
 import CartItem from "./CartItem";
 
-import { useCartStore } from "../../stores/useCartStore";
+import { useCartStore } from "../../lib/stores/useCartStore";
 
-import useFromStore from "../../hooks/useFromStore";
+import useFromStore from "../../lib/hooks/useFromStore";
 import Link from "next/link";
 
 function Cart() {

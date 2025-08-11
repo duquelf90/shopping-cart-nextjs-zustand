@@ -1,8 +1,8 @@
 import { create } from "zustand"
 import { persist } from "zustand/middleware"
 
-import { Product } from "../types"
-import { useNotification } from '@/context/NotificationContext';
+import { Product } from "../../types"
+import { useNotification } from '@/lib/context/NotificationContext';
 
 interface State {
 	cart: Product[]

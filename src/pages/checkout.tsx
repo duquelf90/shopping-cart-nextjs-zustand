@@ -68,7 +68,6 @@ const Checkout = () => {
         dataToSend
       );
       if (response.status === 201) {
-        clearCart();
         router.push("/confirm");
       }
       console.log("Respuesta de la API:", response.data);

@@ -34,6 +34,7 @@ const CartDetails = () => {
                     incrementItem={incrementItem}
                     decrementItem={decrementItem}
                   />
+                  
                   {/* <hr className="border-t-black/10"></hr> */}
                 </>
               ))}

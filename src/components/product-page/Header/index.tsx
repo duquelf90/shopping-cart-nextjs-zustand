@@ -1,8 +1,8 @@
 import React from "react";
 import PhotoSection from "./PhotoSection";
 import { cn } from "@/lib/utils";
-import AddToCardSection from "./AddToCardSection";
 import { Product } from "@/types";
+import AddToCardSection from "./AddToCardSection";
 
 const Header = ({ data }: { data: Product }) => {
   return (
@@ -19,10 +19,6 @@ const Header = ({ data }: { data: Product }) => {
             {data.title}
           </h1>
           
-          <div className="flex items-center space-x-2.5 sm:space-x-3 mb-5">
-            
-            
-          </div>
           <p className="text-sm sm:text-base text-black/60 mb-5">
             {data.description}
           </p>

@@ -18,14 +18,14 @@ const AddToCardSection = ({ data }: { data: Product }) => {
   };
 
   return (
-    <div className="fixed md:relative w-full bg-white border-t md:border-none border-black/5 bottom-0 left-0 p-4 md:p-0 z-10 flex items-center justify-between sm:justify-start md:justify-center">
+    <div className="md:relative w-full bg-white border-t md:border-none border-black/5 bottom-0 left-0 p-4 md:p-0 flex items-center justify-between sm:justify-start md:justify-center">
       <CartCounter onAdd={setQuantity} onRemove={setQuantity} />
       <button
           title="Add to cart"
           className="bg-black w-full ml-3 sm:ml-5 rounded-full h-11 md:h-[52px] text-sm sm:text-base text-white hover:bg-black/80 transition-all"
           onClick={handleAddToCart}
         >
-            Add to Cart
+            Añadir al carrito
         </button>
     </div>
   );

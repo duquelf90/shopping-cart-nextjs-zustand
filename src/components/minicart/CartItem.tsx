@@ -19,15 +19,15 @@ export default function CartItem({
   return (
     <li className="flex justify-between items-center gap-4  mb-2 shadow-md p-4">
       <div className="flex items-center">
-        <img
+        <Image
           src={product.thumbnail}
-          alt={product.name}
+          alt={product.title}
           width={100}
           height={100}
           className="h-10 w-10 rounded-full mr-4"
         />
         <div className="flex flex-col">
-          <span className="font-bold flex-1">{product.name}</span>
+          <span className="font-bold flex-1">{product.title}</span>
           <span className="text-gray-600 font-bold">${product.price}</span>
           <span>Quantity: {product.quantity}</span>
         </div>

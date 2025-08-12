@@ -13,6 +13,7 @@ const PhotoSection = ({ data }: { data: Product }) => {
         <div className="flex lg:flex-col space-x-3 lg:space-x-0 lg:space-y-3.5 w-full lg:w-fit items-center lg:justify-start justify-center">
           {data.images.map((photo, index) => (
             <button
+              title={data.title}
               key={index}
               type="button"
               className="bg-[#F0EEED] rounded-[13px] xl:rounded-[20px] w-full max-w-[111px] xl:max-w-[152px] max-h-[106px] xl:max-h-[167px] xl:min-h-[167px] aspect-square overflow-hidden"

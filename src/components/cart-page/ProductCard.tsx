@@ -40,6 +40,7 @@ export const ProductCard = ({
             {product.title}
           </h1>
           <button
+            title={product.title}
             className="h-5 w-5 md:h-9 md:w-9"
             onClick={() => removeFromCart(product)}
           >
@@ -56,8 +57,8 @@ export const ProductCard = ({
           </span>
           <CartCounter
             initialValue={product.quantity}
-            onAdd={() => incrementItem(product)} // Incrementa el producto
-            onRemove={() => decrementItem(product)} // Decrementa el producto
+            onAdd={() => incrementItem && incrementItem(product)} // Incrementa el producto
+            onRemove={() => decrementItem && decrementItem(product)} // Decrementa el producto
           />
         </div>
       </div>

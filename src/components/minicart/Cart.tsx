@@ -1,9 +1,7 @@
 import CartItem from "./CartItem";
-
-import { useCartStore } from "../../lib/stores/useCartStore";
-
-import useFromStore from "../../lib/hooks/useFromStore";
 import Link from "next/link";
+import { useCartStore } from "@/lib/stores/useCartStore";
+import useFromStore from "@/lib/hooks/useFromStore";
 
 function Cart() {
   const cart = useFromStore(useCartStore, (state) => state.cart);

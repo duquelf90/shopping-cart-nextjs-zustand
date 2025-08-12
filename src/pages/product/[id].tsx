@@ -1,4 +1,3 @@
-// pages/products/[id].tsx
 import Header from "@/components/product-page/Header";
 import ProductListSec from "@/components/products/ProductListSec";
 import { useProductsStore } from "@/lib/stores/useProductsStore";

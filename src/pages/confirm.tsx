@@ -1,5 +1,3 @@
-// pages/confirm.js
-
 import React from "react";
 
 const ConfirmPage = () => {

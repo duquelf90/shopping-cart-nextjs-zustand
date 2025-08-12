@@ -2,6 +2,7 @@ import CartItem from "./CartItem";
 import Link from "next/link";
 import { useCartStore } from "@/lib/stores/useCartStore";
 import useFromStore from "@/lib/hooks/useFromStore";
+import { Button } from "../ui/button";
 
 function Cart() {
   const cart = useFromStore(useCartStore, (state) => state.cart);
@@ -31,14 +32,14 @@ function Cart() {
         <span className="text-xl font-bold">${total.toFixed(2)}</span>
       </div>
 	  <div className="flex justify-center items-center gap-2">
-		<button
+		<Button
         onClick={clearCart}
         className="mt-4 p-2 bg-red-500 text-white rounded"
       >
         Vaciar carrito
-      </button>
+      </Button>
       <Link href="/cart-details">
-        <button className="mt-4 p-2 bg-indigo-500 text-white rounded">Ver Detalles</button>
+        <Button className="mt-4 p-2 bg-indigo-500 text-white rounded">Ver Detalles</Button>
       </Link>
 	  </div>
     </section>

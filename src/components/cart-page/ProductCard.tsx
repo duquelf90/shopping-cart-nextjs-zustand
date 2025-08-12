@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { CartCounter } from "../ui/CartCounter";
+import { Button } from "../ui/button";
 
 type ProductCardProps = {
   product: Product;
@@ -39,7 +40,7 @@ export const ProductCard = ({
           <h1 className="text-black font-bold text-base xl:text-xl">
             {product.title}
           </h1>
-          <button
+          <Button
             title={product.title}
             className="h-5 w-5 md:h-9 md:w-9"
             onClick={() => removeFromCart(product)}
@@ -49,7 +50,7 @@ export const ProductCard = ({
               width="24"
               height="24"
             ></Icon>
-          </button>
+          </Button>
         </div>
         <div className="flex items-center flex-wrap justify-between">
           <span className="font-bold text-black text-xl xl:text-2xl">

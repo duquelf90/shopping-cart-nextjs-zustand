@@ -30,14 +30,19 @@ const Checkout = () => {
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
-    const [section, field] = name.split("."); // Divide el nombre en sección y campo
-    setFormData((prev) => ({
-      ...prev,
-      [section]: {
-        ...prev[section],
-        [field]: value,
-      },
-    }));
+    const [section, field] = name.split(".") as [
+      keyof FormData,
+      keyof FormData[keyof FormData]
+    ]; // Divide el nombre en sección y campo
+    if (section in formData && field in formData[section]) {
+      setFormData((prev) => ({
+        ...prev,
+        [section]: {
+          ...prev[section],
+          [field]: value,
+        },
+      }));
+    }
   };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -141,7 +146,7 @@ const Checkout = () => {
         </h3>
         <table className="w-full">
           <thead>
-            <tr >
+            <tr>
               <th className="flex justify-start">Producto</th>
               <th className="text-right">Subtotal</th>
             </tr>

@@ -7,6 +7,7 @@ import { Product } from "@/types.d";
 import { useNotification } from "@/lib/context/NotificationContext";
 import Link from "next/link";
 import { Icon } from "@iconify/react";
+import { Button } from "../ui/button";
 
 interface Props {
   product: Product;
@@ -19,12 +20,13 @@ export default function ProductCard({ product }: Props) {
   const handleAddToCart = () => {
     addToCart(product, addNotification);
   };
+  console.log(product)
 
   return (
     <div className="flex flex-col items-start aspect-auto">
       <Link href={`/product/${product.id}`} className="bg-[#F0EEED] rounded-[13px] lg:rounded-[20px] w-full lg:max-w-[295px] aspect-square mb-2.5 xl:mb-4 overflow-hidden">
-        <img
-          src={product.images[0]}
+        <Image
+          src={product.thumbnail}
           alt={product.title}
           width={100}
           height={100}
@@ -36,13 +38,13 @@ export default function ProductCard({ product }: Props) {
         <span className="font-bold text-black text-xl xl:text-2xl">
           ${product.price}
         </span>
-        <button
+        <Button
           title="Add to cart"
           className="ml-2 bg-blue-500 text-white font-semibold py-2 px-4 rounded hover:bg-blue-600 flex items-end"
           onClick={handleAddToCart}
         >
           <Icon icon="iconoir:cart" width="24" height="24"></Icon>
-        </button>
+        </Button>
       </div>
     </div>
   );

@@ -18,7 +18,7 @@ const CartDetails = () => {
   }
 
   return (
-    <div className="max-w-frame mx-auto px-4 xl:px-0">
+    <>
       {cart && cart.length > 0 ? (
         <>
           <h2 className="font-bold text-[32px] md:text-[40px] text-black uppercase mb-5 md:mb-6">
@@ -27,13 +27,16 @@ const CartDetails = () => {
           <div className="flex flex-col lg:flex-row space-y-5 lg:space-y-0 lg:space-x-5 items-start">
             <div className="w-full p-3.5 md:px-6 flex-col space-y-4 md:space-y-6 rounded-[20px] border border-black/10">
               {cart?.map((product) => (
+                <>
                 <ProductCard
                   key={product.id}
                   product={product}
                   incrementItem={incrementItem}
                   decrementItem={decrementItem}
                 />
+                <hr className="border-t-black/10"></hr></>
               ))}
+              
             </div>
             {/* order sumary */}
             <div className="w-full lg:max-w-[505px] p-5 md:px-6 flex-col space-y-4 md:space-y-6 rounded-[20px] border border-black/10">
@@ -84,7 +87,7 @@ const CartDetails = () => {
       )}
 
       {/* end productCard */}
-    </div>
+    </>
   );
 };
 

@@ -5,7 +5,6 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { CartCounter } from "../ui/CartCounter";
-import { Button } from "../ui/button";
 
 type ProductCardProps = {
   product: Product;
@@ -31,7 +30,6 @@ export const ProductCard = ({
           width={124}
           height={124}
           className="rounded-md w-full h-full object-cover hover:scale-110 transition-all duration-500"
-          //   alt={data.name}
           priority
         />
       </Link>
@@ -40,8 +38,7 @@ export const ProductCard = ({
           <h1 className="text-black font-bold text-base xl:text-xl">
             {product.title}
           </h1>
-          <Button
-            title={product.title}
+          <div
             className="h-5 w-5 md:h-9 md:w-9"
             onClick={() => removeFromCart(product)}
           >
@@ -49,13 +46,17 @@ export const ProductCard = ({
               icon="material-symbols:delete-outline-sharp"
               width="24"
               height="24"
+              color="red"
             ></Icon>
-          </Button>
+          </div>
         </div>
         <div className="flex items-center flex-wrap justify-between">
-          <span className="font-bold text-black text-xl xl:text-2xl">
-            ${product.price}
-          </span>
+          <div className="flex items-center space-x-[5px] xl:space-x-2.5">
+            <span className="font-bold text-black text-xl xl:text-2xl">
+              ${product.price}
+            </span>
+          </div>
+
           <CartCounter
             initialValue={product.quantity}
             onAdd={() => incrementItem && incrementItem(product)} // Incrementa el producto

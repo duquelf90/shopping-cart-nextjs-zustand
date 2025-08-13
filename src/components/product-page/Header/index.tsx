@@ -5,7 +5,6 @@ import AddToCardSection from "./AddToCardSection";
 
 const Header = ({ data }: { data: Product }) => {
   return (
-    <>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
         <div>
           <PhotoSection data={data} />
@@ -25,7 +24,6 @@ const Header = ({ data }: { data: Product }) => {
           <AddToCardSection data={data} />
         </div>
       </div>
-    </>
   );
 };
 

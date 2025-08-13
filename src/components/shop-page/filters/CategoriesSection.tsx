@@ -1,47 +1,28 @@
-import Link from "next/link";
+import { useProductsStore } from "@/lib/stores/useProductsStore";
+import { Icon } from "@iconify/react";
 import React from "react";
 
-type Category = {
-  title: string;
-  slug: string;
-};
-
-const categoriesData: Category[] = [
-  {
-    title: "T-shirts",
-    slug: "/shop?category=t-shirts",
-  },
-  {
-    title: "Shorts",
-    slug: "/shop?category=shorts",
-  },
-  {
-    title: "Shirts",
-    slug: "/shop?category=shirts",
-  },
-  {
-    title: "Hoodie",
-    slug: "/shop?category=hoodie",
-  },
-  {
-    title: "Jeans",
-    slug: "/shop?category=jeans",
-  },
-];
-
 const CategoriesSection = () => {
+  const { products, filterCategory, setFilterCategory } = useProductsStore()
+  const categories = [...new Set(products.flatMap(p => Array.isArray(p.category) ? p.category : [p.category]))]
   return (
-    <div className="flex flex-col space-y-0.5 text-black/60">
-      {categoriesData.map((category, idx) => (
-        <Link
-          key={idx}
-          href={category.slug}
-          className="flex items-center justify-between py-2"
+    <>
+    
+    <div className="flex flex-col space-y-0.5 text-black/60 gap-2">
+      {categories.map((cat) => (
+        <button
+          key={cat}
+          className={`flex items-center justify-between px-4 rounded-lg transition-all capitalize py-2 ${
+            filterCategory === cat ? "bg-black text-white" : "bg-gray-100 dark:bg-gray-700"
+          }`}
+          onClick={() => setFilterCategory(filterCategory === cat ? null : cat)}
         >
-          {category.title}
-        </Link>
+          {cat}
+          <Icon icon="weui:arrow-filled" width="12" height="24"></Icon>
+        </button>
       ))}
     </div>
+    </>
   );
 };
 

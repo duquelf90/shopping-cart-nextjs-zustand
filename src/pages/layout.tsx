@@ -6,7 +6,7 @@ import Header from "@/components/ui/Header";
 import Footer from "@/components/layout/Footer/Footer";
 import { NotificationProvider } from "@/lib/context/NotificationContext";
 import Cart from "@/components/minicart/Cart";
-import Drawer from "@/components/ui/Drawer";
+import CartDrawer from "@/components/ui/CartDrawer";
 
 interface LayoutProps {
   title?: string;
@@ -32,9 +32,10 @@ const Layout: React.FC<LayoutProps> = ({ title, children }) => {
       </Head>
       <NotificationProvider>
         <Header onCartIconClick={handleCartIconClick} />
-        <Drawer isOpen={isDrawerOpen} onCartIconClick={handleCartIconClick}>
+
+        <CartDrawer isOpen={isDrawerOpen} onCartIconClick={handleCartIconClick}>
           <Cart />
-        </Drawer>
+        </CartDrawer>
         <main className="pb-10">
           <div className="max-w-frame mx-auto px-4 xl:px-0 py-5">{children}</div></main>
         <Footer />

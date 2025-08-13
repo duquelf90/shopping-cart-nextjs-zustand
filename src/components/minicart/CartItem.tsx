@@ -15,43 +15,45 @@ export default function CartItem({
   decrementItem,
 }: Props) {
   const removeFromCart = useCartStore((state) => state.removeFromCart);
+  console.log(product.thumbnail);
 
   return (
-    <li className="flex justify-between items-center gap-4  mb-2 shadow-md p-4">
-      <div className="flex items-center">
+    <li className="flex py-6" key={product.id}>
+      <div className="size-24 shrink-0 overflow-hidden">
         <Image
           src={product.thumbnail}
           alt={product.title}
           width={100}
           height={100}
-          className="h-10 w-10 rounded-full mr-4"
+          className="size-full object-cover"
         />
-        <div className="flex flex-col">
-          <span className="font-bold flex-1">{product.title}</span>
-          <span className="text-gray-600 font-bold">${product.price}</span>
-          <span>Quantity: {product.quantity}</span>
-        </div>
       </div>
-      <div>
+      <div className="ml-4 flex flex-1 flex-col">
         <div>
-          {incrementItem && (
-            <button onClick={() => incrementItem(product)}>+</button>
-          )}
-          {decrementItem && (
-            <button onClick={() => decrementItem(product)}>-</button>
-          )}
+          <div className="flex justify-between text-base font-medium text-gray-900">
+            <span className="font-bold flex-1">{product.title}</span>
+            <p className="ml-4 font-bold">{product.price}</p>
+          </div>
         </div>
-        <button
-          title="Remove Item"
-          className="text-red-500 hover:text-red-600 ml-4"
-          onClick={() => removeFromCart(product)}
-        >
-          <Icon
-            icon="material-symbols:delete-outline-sharp"
-            width="24"
-            height="24"
-          ></Icon>
-        </button>
+
+        <div className="flex flex-1 items-center justify-between text-sm">
+          <p className="text-gray-500">Qty {product.quantity}</p>
+
+          <div className="flex">
+            <button
+              title="remove"
+              type="button"
+              onClick={() => removeFromCart(product)}
+              className="font-medium text-indigo-600 hover:text-indigo-500"
+            >
+              <Icon
+                icon="material-symbols:delete-outline-sharp"
+                width="24"
+                height="24"
+              ></Icon>
+            </button>
+          </div>
+        </div>
       </div>
     </li>
   );

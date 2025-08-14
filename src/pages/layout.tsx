@@ -32,7 +32,7 @@ const Layout: React.FC<LayoutProps> = ({ title, children }) => {
       <Providers>
         <Header onCartIconClick={handleCartIconClick} />
         <CartDrawer isOpen={isDrawerOpen} onCartIconClick={handleCartIconClick}>
-          <Cart />
+          <Cart onClose={handleCartIconClick}/>
         </CartDrawer>
         <main className="pb-10">
             {children}

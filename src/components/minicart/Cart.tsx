@@ -3,7 +3,11 @@ import Link from "next/link";
 import { useCartStore } from "@/lib/stores/useCartStore";
 import useFromStore from "@/lib/hooks/useFromStore";
 
-function Cart() {
+interface CartProps {
+  onClose?: () => void;
+}
+
+function Cart({ onClose }: CartProps) {
   const cart = useFromStore(useCartStore, (state) => state.cart);
   const clearCart = useCartStore((state) => state.clearCart);
 
@@ -16,6 +20,7 @@ function Cart() {
         </p>
         <Link
           href="/shop"
+          onClick={onClose}
           className="inline-block bg-black text-white px-6 py-3 rounded-md text-base font-medium hover:bg-indigo-700 transition-colors"
         >
           Ir a la tienda
@@ -54,7 +59,7 @@ function Cart() {
             href="/cart-details"
             className="flex items-center justify-center rounded-md border border-transparent bg-black px-6 py-3 text-base font-medium text-white shadow-xs hover:bg-indigo-700"
           >
-            Checkout
+            Ver carrito
           </Link>
         </div>
           <div

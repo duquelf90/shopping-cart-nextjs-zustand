@@ -28,7 +28,7 @@ const CartDrawer = ({ children, isOpen, onCartIconClick }: Props) => {
 			boxShadow: 'rgba(0, 0, 0, 0.4) 0px 30px 30px',
 		  }}
         >
-          <aside className="h-full overflow-y-auto bg-white shadow-xl">
+          <aside className="h-full overflow-y-auto bg-white">
             <header className="bg-gray-900 text-white py-4 flex items-center justify-end px-4 h-14">
                 <div onClick={onCartIconClick} className="hover:opacity-80">Close</div>
             </header>

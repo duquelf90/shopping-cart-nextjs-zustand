@@ -3,7 +3,7 @@ import Image from "next/image";
 
 import { useCartStore } from "../../lib/stores/useCartStore";
 
-import { Product } from "@/types.d";
+import { Product } from "@/types/types";
 import { useNotification } from "@/lib/context/NotificationContext";
 import Link from "next/link";
 import { Icon } from "@iconify/react";

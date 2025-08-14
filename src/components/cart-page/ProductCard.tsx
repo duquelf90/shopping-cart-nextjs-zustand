@@ -1,5 +1,5 @@
 import { useCartStore } from "@/lib/stores/useCartStore";
-import { Product } from "@/types";
+import { Product } from "@/types/types";
 import { Icon } from "@iconify/react";
 import Image from "next/image";
 import Link from "next/link";

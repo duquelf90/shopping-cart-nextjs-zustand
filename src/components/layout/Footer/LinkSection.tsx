@@ -5,56 +5,30 @@ import Link from "next/link";
 const footerLinksData: FooterLinks[] = [
   {
     id: 1,
-    title: "company",
+    title: "empresa",
     children: [
       {
         id: 11,
-        label: "about",
+        label: "inicio",
         url: "#",
       },
       {
         id: 12,
-        label: "features",
+        label: "productos",
         url: "#",
       },
       {
         id: 13,
-        label: "works",
+        label: "categorias",
         url: "#",
       },
       {
         id: 14,
-        label: "career",
+        label: "nosotros",
         url: "#",
       },
     ],
   },
-  {
-    id: 2,
-    title: "contactos",
-    children: [
-      {
-        id: 21,
-        label: "customer support",
-        url: "#",
-      },
-      {
-        id: 22,
-        label: "delivery details",
-        url: "#",
-      },
-      {
-        id: 23,
-        label: "terms & conditions",
-        url: "#",
-      },
-      {
-        id: 24,
-        label: "privacy policy",
-        url: "#",
-      },
-    ],
-  },  
   
 ];
 
@@ -62,8 +36,8 @@ const LinksSection = () => {
   return (
     <>
       {footerLinksData.map((item) => (
-        <section className="flex flex-col mt-5" key={item.id}>
-          <h3 className="font-medium text-sm md:text-base uppercase tracking-widest mb-6">
+        <section className="flex flex-col mt-5 md:pl-10" key={item.id}>
+          <h3 className="text-sm md:text-base uppercase tracking-widest mb-6 font-bold">
             {item.title}
           </h3>
           {item.children.map((link) => (

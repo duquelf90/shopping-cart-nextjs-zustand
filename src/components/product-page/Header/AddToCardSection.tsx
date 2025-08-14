@@ -5,7 +5,7 @@ import React, { useState } from "react";
 import { CartCounter } from "@/components/ui/CartCounter";
 import { useNotification } from "@/lib/context/NotificationContext";
 import { useCartStore } from "@/lib/stores/useCartStore";
-import { Product } from "@/types";
+import { Product } from "@/types/types";
 import { Icon } from "@iconify/react";
 
 const AddToCardSection = ({ data }: { data: Product }) => {

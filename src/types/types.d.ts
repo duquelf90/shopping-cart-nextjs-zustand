@@ -26,4 +26,12 @@ export interface RecipientData {
 	notes: string;
 }
 
+export type Review = {
+	id: number;
+	user: string;
+	content: string;
+	rating: number;
+	date: string;
+  };
+
 

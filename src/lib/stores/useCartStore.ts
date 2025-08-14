@@ -1,7 +1,7 @@
 import { create } from "zustand"
 import { persist } from "zustand/middleware"
 
-import { Product } from "../../types"
+import { Product } from "../../types/types"
 import { useNotification } from '@/lib/context/NotificationContext';
 
 interface State {

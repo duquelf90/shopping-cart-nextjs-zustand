@@ -1,6 +1,7 @@
 import React from "react";
 import * as motion from "framer-motion/client";
 import { cn } from "@/lib/utils";
+import { integralCF } from "@/styles/fonts";
 import {
   Carousel,
   CarouselContent,
@@ -8,7 +9,7 @@ import {
 } from "@/components/ui/carousel";
 import ProductCard from "./ProductCard";
 import Link from "next/link";
-import { Product } from "@/types";
+import { Product } from "@/types/types";
 
 type ProductListSecProps = {
   title: string;
@@ -24,7 +25,10 @@ const ProductListSec = ({ title, data, viewAllLink }: ProductListSecProps) => {
         whileInView={{ y: "0", opacity: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
-        className="text-[32px] md:text-5xl mb-8 md:mb-14"
+        className={cn([
+          integralCF.className,
+          "text-[32px] md:text-4xl mb-8 md:mb-14 capitalize",
+        ])}
       >
         {title}
       </motion.h2>

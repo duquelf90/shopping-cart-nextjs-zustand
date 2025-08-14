@@ -1,6 +1,6 @@
 import React from "react";
 import PhotoSection from "./PhotoSection";
-import { Product } from "@/types";
+import { Product } from "@/types/types";
 import AddToCardSection from "./AddToCardSection";
 
 const Header = ({ data }: { data: Product }) => {

@@ -2,7 +2,7 @@ import { useCartStore } from "@/lib/stores/useCartStore";
 import React, { useState } from "react";
 import axios from "axios";
 import { useRouter } from "next/router";
-import { CustomerData, RecipientData } from "@/types";
+import { CustomerData, RecipientData } from "@/types/types";
 
 interface FormData {
   customer: CustomerData;

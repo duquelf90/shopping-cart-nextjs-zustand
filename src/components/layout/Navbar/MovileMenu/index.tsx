@@ -23,7 +23,7 @@ const MovileDrawer = ({ children, isOpen, onMenuIconClick }: Props) => {
 
       {/* Drawer */}
       <div
-        className={`fixed top-0 left-0 h-full w-80 z-30 transform transition-transform duration-500 ease-in-out ${
+        className={`fixed top-0 left-0 h-full w-[15rem] z-30 transform transition-transform duration-500 ease-in-out ${
           isOpen ? "translate-x-0" : "-translate-x-full"
         }`}
         style={{

@@ -3,7 +3,7 @@ import { Icon } from '@iconify/react';
 import React, { useState } from 'react';
 
 type CartCounterProps = {
-  initialValue?: number;
+  counter?: number;
   onAdd?: (value: number) => void;
   onRemove?: (value: number) => void;
 };

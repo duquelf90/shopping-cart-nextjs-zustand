@@ -21,7 +21,6 @@ export default function ProductCard({ product }: Props) {
   const handleAddToCart = () => {
     addToCart(product, addNotification);
   };
-  console.log(product)
 
   return (
     <div className="flex flex-col items-start aspect-auto">

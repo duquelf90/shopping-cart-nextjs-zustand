@@ -15,7 +15,6 @@ export default function CartItem({
   decrementItem,
 }: Props) {
   const removeFromCart = useCartStore((state) => state.removeFromCart);
-  console.log(product.thumbnail);
 
   return (
     <li className="flex py-6" key={product.id}>

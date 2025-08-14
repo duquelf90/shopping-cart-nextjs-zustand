@@ -9,10 +9,10 @@ interface State {
 }
 
 interface Actions {
-	addToCart: (Item: Product,addNotification: (msg: string) => void) => void
+	addToCart: (Item: Product, addNotification: (msg: string) => void) => void
 	removeFromCart: (Item: Product) => void
 	clearCart: () => void
-	incrementItem: (item: Product) => void 
+	incrementItem: (item: Product) => void
 	decrementItem: (item: Product) => void
 	updateCart: (item: Product, quantity: number, addNotification: (msg: string) => void) => void;
 }
@@ -26,9 +26,8 @@ const INITIAL_STATE: State = {
 export const useCartStore = create(
 	persist<State & Actions>(
 		(set, get) => ({
-			cart: INITIAL_STATE.cart,
-			totalItems: INITIAL_STATE.totalItems,
-			totalPrice: INITIAL_STATE.totalPrice,
+			...INITIAL_STATE,
+			
 			addToCart: (product: Product, addNotification) => {
 				const cart = get().cart
 				const cartItem = cart.find(item => item.id === product.id)
@@ -119,24 +118,24 @@ export const useCartStore = create(
 
 			},
 
-			updateCart: (product: Product, quantity: number, addNotification) => {
+			updateCart: (product: Product, newQuantity: number, addNotification) => {
 				const cart = get().cart;
 				const cartItem = cart.find(item => item.id === product.id);
-		
+			  
 				if (cartItem) {
-				  const priceDifference = (quantity - cartItem.quantity) * product.price;
-		
+				  const priceDifference = (newQuantity - cartItem.quantity) * product.price;
+			  
 				  const updatedCart = cart.map(item =>
-					item.id === product.id ? { ...item, quantity } : item
+					item.id === product.id ? { ...item, quantity: newQuantity } : item
 				  );
-		
+			  
 				  set(state => ({
 					cart: updatedCart,
-					totalItems: state.totalItems + (quantity - cartItem.quantity),
+					totalItems: state.totalItems + (newQuantity - cartItem.quantity),
 					totalPrice: state.totalPrice + priceDifference,
 				  }));
-		
-				  addNotification(`La cantidad de ${product.title} se ha actualizado a ${quantity}.`);
+			  
+				  addNotification(`La cantidad de ${product.title} se ha actualizado a ${newQuantity}.`);
 				}
 			  },
 

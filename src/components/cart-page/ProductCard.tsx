@@ -58,7 +58,7 @@ export const ProductCard = ({
           </div>
 
           <CartCounter
-            initialValue={product.quantity}
+            counter={product.quantity}
             onAdd={() => incrementItem && incrementItem(product)} // Incrementa el producto
             onRemove={() => decrementItem && decrementItem(product)} // Decrementa el producto
           />

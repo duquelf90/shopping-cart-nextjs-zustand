@@ -14,8 +14,6 @@ interface Actions {
   fetchData: () => Promise<void>
   setFilterCategory: (category: string | null) => void
   filteredProducts: () => Product[]
-  generateNewProducts: () => void
-  generateTopSellingProducts: () => void
 }
 
 const INITIAL_STATE: State = {
@@ -39,7 +37,24 @@ export const useProductsStore = create<State & Actions>((set, get) => ({
         throw new Error(errorMessage)
       }
       const data = await response.json()
-      set({ products: data.products, isLoading: false })
+      const products = data.products
+      // Generar nuevos productos
+      const newProduct = [...products]
+        .sort(() => 0.5 - Math.random())
+        .slice(0, 6)
+
+      // Generar más vendidos
+      const topSelling = [...products]
+        .sort((a, b) => (b.rating || 0) - (a.rating || 0))
+        .slice(0, 7)
+
+      set({
+        products,
+        newProduct,
+        topSelling,
+        isLoading: false
+      })
+
     } catch (error) {
       const errorMessage = error instanceof Error ? error.message : "Error desconocido"
       set({ error: errorMessage, isLoading: false })
@@ -54,20 +69,6 @@ export const useProductsStore = create<State & Actions>((set, get) => ({
     return products.filter((p) =>
       Array.isArray(p.category) ? p.category.includes(filterCategory) : p.category === filterCategory
     )
-  },
-  generateNewProducts: () => {
-    const { products } = get()
-    const shuffled = products.sort(() => 0.5 - Math.random())
-    const selectedNewProducts = shuffled.slice(0, 6)
-    set({ newProduct: selectedNewProducts })
-  },
-
-  generateTopSellingProducts: () => {
-    const { products } = get()
-    const topSelling = products
-      .sort((a, b) => (b.rating || 0) - (a.rating || 0)) // Ordenar por rating
-      .slice(0, 7) // Seleccionar los 7 mejores
-    set({ topSelling })
-  },
+  }
 
 }))

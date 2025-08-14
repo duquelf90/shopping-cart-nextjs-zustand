@@ -20,6 +20,11 @@ const HomePage = () => {
   return (
     <>
     <Home/>
+    <div className="bg-black h-10">
+      <div className="max-w-frame mx-auto flex flex-wrap items-center justify-center md:justify-between py-5 md:py-0 sm:px-4 xl:px-0 space-x-7">
+        
+      </div>
+    </div>
     <main className="my-[50px] sm:my-[72px]">
         <ProductListSec
           title="Nuevos productos"

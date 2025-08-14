@@ -9,84 +9,28 @@ import {
 } from "@/components/ui/navigation-menu";
 import { MenuItem } from "./MenuItem";
 import CartBtn from "./CartBtn";
-import { NavMenu } from "../navbar.types";
 import useFromStore from "@/lib/hooks/useFromStore";
 import { useCartStore } from "@/lib/stores/useCartStore";
+import { Icon } from "@iconify/react";
+import { data } from "@/data/menuItem";
 
-const data: NavMenu = [
-  {
-    id: 1,
-    label: "Ofertas",
-    type: "MenuList",
-    children: [
-      {
-        id: 11,
-        label: "Combos de comida",
-        url: "/shop#men-clothes",
-        description: "In attractive and spectacular colors and designs",
-      },
-      {
-        id: 12,
-        label: "Combos de carnes",
-        url: "/shop#women-clothes",
-        description: "Ladies, your style and tastes are important to us",
-      },
-      {
-        id: 13,
-        label: "Equipos para apagones",
-        url: "/shop#kids-clothes",
-        description: "For all ages, with happy and beautiful colors",
-      },
-      {
-        id: 14,
-        label: "Combo de aseo personal",
-        url: "/shop#bag-shoes",
-        description: "Suitable for men, women and all tastes and styles",
-      },
-    ],
-  },
-  {
-    id: 2,
-    type: "MenuItem",
-    label: "Nuevos Productos",
-    url: "/shop#on-sale",
-    children: [],
-  },
-  {
-    id: 3,
-    type: "MenuItem",
-    label: "Mas vendidos",
-    url: "/shop#new-arrivals",
-    children: [],
-  },
-  {
-    id: 4,
-    type: "MenuItem",
-    label: "Contacto",
-    url: "/#contacto",
-    children: [],
-  },
-  {
-    id: 5,
-    type: "MenuItem",
-    label: "FAQs",
-    url: "/#faqs",
-    children: [],
-  },
-];
+
 
 interface Props {
   onCartIconClick: () => void;
+  onMenuIconClick: () => void;
 }
 
-const TopNavbar = ({ onCartIconClick }: Props) => {
+const TopNavbar = ({ onCartIconClick, onMenuIconClick }: Props) => {
   const cart = useFromStore(useCartStore, (state) => state.cart);
   return (
     <nav className="sticky top-0 bg-white z-20">
       <div className="flex relative max-w-frame mx-auto items-center justify-between py-5 md:py-6 px-4 xl:px-0">
         <div className="flex items-center">
           <div className="block md:hidden mr-4">
-            {/* aca va el menu movil */}
+            <div onClick={onMenuIconClick}>
+            <Icon icon="mingcute:menu-fill" width="24" height="24"  color="black"/>
+              </div>
           </div>
           <Link
             href="/"

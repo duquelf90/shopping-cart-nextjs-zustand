@@ -7,6 +7,7 @@ import CartDrawer from "@/components/minicart/CartDrawer";
 import Providers from "./provider";
 import TopBanner from "@/components/layout/Banner/TopBanner";
 import TopNavbar from "@/components/layout/Navbar/TopNavbar";
+import MovileDrawer from "@/components/layout/Navbar/MovileMenu";
 
 interface LayoutProps {
   title?: string;
@@ -19,9 +20,14 @@ export const metadata: Metadata = {
 
 const Layout: React.FC<LayoutProps> = ({ title, children }) => {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+  const [isDrawerMenuOpen, setIsDrawerMenuOpen] = useState(false);
 
   const handleCartIconClick = () => {
     setIsDrawerOpen(!isDrawerOpen);
+  };
+  const handleMenuIconClick = () => {
+    console.log(isDrawerMenuOpen)
+    setIsDrawerMenuOpen(!isDrawerMenuOpen);
   };
   return (
     <div>
@@ -32,7 +38,10 @@ const Layout: React.FC<LayoutProps> = ({ title, children }) => {
       </Head>
       <TopBanner />
       <Providers>
-        <TopNavbar onCartIconClick={handleCartIconClick} />
+        <TopNavbar onCartIconClick={handleCartIconClick} onMenuIconClick={handleMenuIconClick} />
+        <MovileDrawer isOpen={isDrawerMenuOpen} onMenuIconClick={handleMenuIconClick}>
+          Menu Lateral
+        </MovileDrawer>
         <CartDrawer isOpen={isDrawerOpen} onCartIconClick={handleCartIconClick}>
           <Cart onClose={handleCartIconClick}/>
         </CartDrawer>

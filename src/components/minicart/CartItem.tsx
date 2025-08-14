@@ -39,18 +39,17 @@ export default function CartItem({
           <p className="text-gray-500">Qty {product.quantity}</p>
 
           <div className="flex">
-            <button
-              title="remove"
-              type="button"
+            <div
               onClick={() => removeFromCart(product)}
-              className="font-medium text-indigo-600 hover:text-indigo-500"
+              className="cursor-pointer"
             >
               <Icon
                 icon="material-symbols:delete-outline-sharp"
-                width="24"
-                height="24"
+                width="28"
+                height="28"
+                color="red"
               ></Icon>
-            </button>
+            </div>
           </div>
         </div>
       </div>

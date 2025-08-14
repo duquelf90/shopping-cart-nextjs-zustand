@@ -6,7 +6,7 @@ import { useEffect } from "react";
 
 const ProductDetailPage = () => {
   const router = useRouter();
-  const { id } = router.query; 
+  const { id } = router.query;
   const { products, fetchData } = useProductsStore();
 
   useEffect(() => {
@@ -16,16 +16,20 @@ const ProductDetailPage = () => {
   const product = products.find((p) => p.id.toString() === id);
 
   if (!product) {
-    return <div>Cargando...</div>; 
+    return <div>Cargando...</div>;
   }
 
   return (
-    <div className="mb-[50px] sm:mb-20">
-      <section className="mb-11">
-        <Header data={product} />
-      </section>
-      <ProductListSec title="Te puede interesar" data={products} />
-    </div>
+    <main className="pb-20">
+      <div className="max-w-frame mx-auto px-4 xl:px-0 py-5">
+        <div className="mb-[50px] sm:mb-20">
+          <section className="mb-11">
+            <Header data={product} />
+          </section>
+          <ProductListSec title="Te puede interesar" data={products} />
+        </div>
+      </div>
+    </main>
   );
 };
 

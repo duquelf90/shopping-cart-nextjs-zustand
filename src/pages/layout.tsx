@@ -1,7 +1,6 @@
 import React, { ReactNode, useEffect, useState } from "react";
 import Head from "next/head";
 import type { Metadata } from "next";
-// import styles from "../styles/Layout.module.css"; // Estilos opcionales
 import Header from "@/components/ui/Header";
 import Footer from "@/components/layout/Footer/Footer";
 import Cart from "@/components/minicart/Cart";
@@ -32,14 +31,11 @@ const Layout: React.FC<LayoutProps> = ({ title, children }) => {
       </Head>
       <Providers>
         <Header onCartIconClick={handleCartIconClick} />
-
         <CartDrawer isOpen={isDrawerOpen} onCartIconClick={handleCartIconClick}>
           <Cart />
         </CartDrawer>
         <main className="pb-10">
-          {/* <div className="max-w-frame mx-auto px-4 xl:px-0 py-5"> */}
             {children}
-          {/* </div> */}
         </main>
         <Footer />
       </Providers>

@@ -19,7 +19,7 @@ export const ProductCard = ({
 }: ProductCardProps) => {
   const removeFromCart = useCartStore((state) => state.removeFromCart);
   return (
-    <div className="flex items-start space-x-4">
+    <div className="flex items-start space-x-4" key={product.id}>
       <Link
         href={`/product/${product.id}`}
         className="bg-[#F0EEED] rounded-lg w-full min-w-[100px] max-w-[100px] sm:max-w-[124px] aspect-square overflow-hidden"
@@ -34,7 +34,7 @@ export const ProductCard = ({
         />
       </Link>
       <div className="flex w-full self-stretch flex-col">
-        <div className="flex items-center justify-between mb-5">
+        <div className="flex items-center justify-between mb-2">
           <h1 className="text-black font-bold text-base xl:text-xl">
             {product.title}
           </h1>
@@ -50,6 +50,7 @@ export const ProductCard = ({
             ></Icon>
           </div>
         </div>
+        <p className="w-50 my-2">{product.description}</p>
         <div className="flex items-center flex-wrap justify-between">
           <div className="flex items-center space-x-[5px] xl:space-x-2.5">
             <span className="font-bold text-black text-xl xl:text-2xl">

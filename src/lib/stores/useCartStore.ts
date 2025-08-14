@@ -1,8 +1,6 @@
+import { Product } from "@/types/types"
 import { create } from "zustand"
 import { persist } from "zustand/middleware"
-
-import { Product } from "../../types/types"
-import { useNotification } from '@/lib/context/NotificationContext';
 
 interface State {
 	cart: Product[]
@@ -14,8 +12,9 @@ interface Actions {
 	addToCart: (Item: Product,addNotification: (msg: string) => void) => void
 	removeFromCart: (Item: Product) => void
 	clearCart: () => void
-	incrementItem: (item: Product) => void // Nueva acción
+	incrementItem: (item: Product) => void 
 	decrementItem: (item: Product) => void
+	updateCart: (item: Product, quantity: number, addNotification: (msg: string) => void) => void;
 }
 
 const INITIAL_STATE: State = {
@@ -119,6 +118,27 @@ export const useCartStore = create(
 
 
 			},
+
+			updateCart: (product: Product, quantity: number, addNotification) => {
+				const cart = get().cart;
+				const cartItem = cart.find(item => item.id === product.id);
+		
+				if (cartItem) {
+				  const priceDifference = (quantity - cartItem.quantity) * product.price;
+		
+				  const updatedCart = cart.map(item =>
+					item.id === product.id ? { ...item, quantity } : item
+				  );
+		
+				  set(state => ({
+					cart: updatedCart,
+					totalItems: state.totalItems + (quantity - cartItem.quantity),
+					totalPrice: state.totalPrice + priceDifference,
+				  }));
+		
+				  addNotification(`La cantidad de ${product.title} se ha actualizado a ${quantity}.`);
+				}
+			  },
 
 		}),
 		{

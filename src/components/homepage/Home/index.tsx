@@ -43,7 +43,7 @@ const Home = () => {
               href="/shop"
               className="w-full md:w-52 mb-5 md:mb-12 inline-block text-center bg-black hover:bg-black/80 transition-all text-white px-14 py-4 rounded-full hover:animate-pulse"
             >
-              Shop Now
+              Ir a la tienda
             </Link>
           </motion.div>
           <motion.div
@@ -58,7 +58,7 @@ const Home = () => {
                 <AnimatedCounter from={0} to={200} />+
               </span>
               <span className="text-xs xl:text-base text-black/60 text-nowrap">
-                International Brands
+                Marcas Internacionales
               </span>
             </div>
             <Separator
@@ -70,7 +70,7 @@ const Home = () => {
                 <AnimatedCounter from={0} to={2000} />+
               </span>
               <span className="text-xs xl:text-base text-black/60 text-nowrap">
-                High-Quality Products
+                Productos de alta calidad
               </span>
             </div>
             <Separator
@@ -82,7 +82,7 @@ const Home = () => {
                 <AnimatedCounter from={0} to={3000} />+
               </span>
               <span className="text-xs xl:text-base text-black/60 text-nowrap">
-                Happy Customers
+                Clientes felices
               </span>
             </div>
           </motion.div>

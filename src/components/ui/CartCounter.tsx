@@ -9,24 +9,24 @@ type CartCounterProps = {
 };
 
 export const CartCounter: React.FC<CartCounterProps> = ({
-  initialValue = 1,
+  counter = 1,
   onAdd,
   onRemove,
 }) => {
-  const [count, setCount] = useState(initialValue);
+  const [quantity, setCount] = useState(counter);
 
   const handleAdd = () => {
-    setCount(count + 1);
+    setCount(quantity + 1);
     if (onAdd) {
-      onAdd(count + 1); // Llama a onAdd con el nuevo valor
+      onAdd(quantity + 1); // Llama a onAdd con el nuevo valor
     }
   };
 
   const handleRemove = () => {
-    if (count > 1) {
-      setCount(count - 1);
+    if (quantity > 1) {
+      setCount(quantity - 1);
       if (onRemove) {
-        onRemove(count - 1); // Llama a onRemove con el nuevo valor
+        onRemove(quantity - 1); // Llama a onRemove con el nuevo valor
       }
     }
   };
@@ -39,7 +39,7 @@ export const CartCounter: React.FC<CartCounterProps> = ({
       >
         <Icon icon="ic:round-minus" width="24" height="24" />
       </div>
-      <span className="font-medium text-sm sm:text-base">{count}</span>
+      <span className="font-medium text-sm sm:text-base">{quantity}</span>
       <div
         className="inline-flex items-center justify-center whitespace-nowrap rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 hover:text-accent-foreground h-5 w-5 sm:h-6 sm:w-6 text-xl hover:bg-transparent"
         onClick={handleAdd}

@@ -8,6 +8,7 @@ import { useNotification } from "@/lib/context/NotificationContext";
 import Link from "next/link";
 import { Icon } from "@iconify/react";
 import { Button } from "../ui/button";
+import { Rating } from "react-simple-star-rating";
 
 interface Props {
   product: Product;
@@ -33,6 +34,20 @@ export default function ProductCard({ product }: Props) {
           className="rounded-md w-full h-full object-contain hover:scale-110 transition-all duration-500"
         />
       </Link>
+      <div className="flex items-end mb-1 xl:mb-2">
+        <Rating
+          initialValue={product.rating}
+          allowFraction
+          SVGclassName="inline-block"
+          emptyClassName="fill-gray-50"
+          size={19}
+          readonly
+        />
+        <span className="text-black text-xs xl:text-sm ml-[11px] xl:ml-[13px] pb-0.5 xl:pb-0">
+          {product.rating.toFixed(1)}
+          <span className="text-black/60">/5</span>
+        </span>
+      </div>
       <strong className="text-black xl:text-lg">{product.title}</strong>
       <div className="flex items-center w-full space-x-[5px] xl:space-x-2.5 mt-2 justify-between">
         <span className="font-bold text-black text-xl xl:text-2xl">

@@ -3,6 +3,7 @@ export interface Product {
 	title: string
 	description: string
 	price: number
+	rating: any
 	stock: number
 	brand: string
 	category: string[]

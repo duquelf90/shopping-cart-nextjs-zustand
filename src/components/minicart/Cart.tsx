@@ -56,7 +56,7 @@ function Cart({ onClose }: CartProps) {
         </p>
         <div className="mt-6">
           <Link
-            href="/cart-details"
+            href="/cart"
             className="flex items-center justify-center rounded-md border border-transparent bg-black px-6 py-3 text-base font-medium text-white shadow-xs hover:bg-indigo-700"
           >
             Ver carrito

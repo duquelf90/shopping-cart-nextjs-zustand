@@ -50,7 +50,7 @@ export const ProductCard = ({
             ></Icon>
           </div>
         </div>
-        <p className="w-50 my-2">{product.description}</p>
+        <p className="w-50 mb-5">{product.description}</p>
         <div className="flex items-center flex-wrap justify-between">
           <div className="flex items-center space-x-[5px] xl:space-x-2.5">
             <span className="font-bold text-black text-xl xl:text-2xl">

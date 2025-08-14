@@ -1,7 +1,7 @@
 import React from "react";
 import useFromStore from "@/lib/hooks/useFromStore";
 import { useCartStore } from "@/lib/stores/useCartStore";
-import { ProductCard } from "@/components/cart-page/ProductCard";
+import { ProductCard } from "@/components/cart/ProductCard";
 import { Icon } from "@iconify/react";
 import Link from "next/link";
 import { cn } from "@/lib/utils";

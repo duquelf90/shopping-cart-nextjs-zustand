@@ -38,7 +38,7 @@ const Footer = () => {
             <div className="flex flex-wrap justify-center md:justify-end space-x-6 text-black/60">
               <a href="/faq">FAQ</a>
               <a href="/politica-de-privacidad">Política de Privacidad</a>
-              <Link href="/cart-details">Carrito</Link>
+              <Link href="/cart">Carrito</Link>
             </div>
           </div>
         </div>

@@ -1,82 +1,74 @@
-import { cn } from "@/lib/utils";
-import { integralCF } from "@/styles/fonts";
+"use client";
+
 import React from "react";
 import * as motion from "framer-motion/client";
-import CategoryStyleCard from "./CategoryStyleCard";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  type CarouselApi,
+} from "@/components/ui/carousel";
+import Image from "next/image";
 
-const Categories = () => {
+type Category = {
+  id: number;
+  name: string;
+  image: string;
+};
+
+const categories: Category[] = [
+  { id: 1, name: "Carnes", image: "/images/carnes.jpg" },
+  { id: 2, name: "Electrodomésticos", image: "/images/electro.jpg" },
+  { id: 3, name: "Abarrotes", image: "/images/abarrotes.jpg" },
+  { id: 4, name: "Enlatados", image: "/images/enlatados.jpg" },
+  { id: 5, name: "Dulces", image: "/images/dulces.jpg" },
+];
+
+const CategoriesCarousel = () => {
+  const [api, setApi] = React.useState<CarouselApi>();
+
   return (
-    <div className="px-4 xl:px-0">
-      <section className="max-w-frame mx-auto bg-[#F0F0F0] px-6 pb-6 pt-10 md:p-[70px] rounded-[40px] text-center">
-        <motion.h2
-          initial={{ y: "100px", opacity: 0 }}
-          whileInView={{ y: "0", opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className={cn([
-            integralCF.className,
-            "text-[32px] leading-[36px] md:text-5xl mb-8 md:mb-14 capitalize",
-          ])}
+    <section className="overflow-hidden bg-black py-10">
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+      >
+        <Carousel
+          setApi={setApi}
+          opts={{
+            align: "center",
+            loop: true,
+          }}
+          className="w-full max-w-6xl mx-auto"
         >
-          BROWSE BY dress STYLE
-        </motion.h2>
-        <motion.div
-          initial={{ y: "100px", opacity: 0 }}
-          whileInView={{ y: "0", opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.6, duration: 0.6 }}
-          className="flex flex-col sm:flex-row md:h-[289px] space-y-4 sm:space-y-0 sm:space-x-5 my-4 sm:mb-5"
-        >
-          <CategoryStyleCard
-            title="Casual"
-            url="/shop#casual"
-            className="md:max-w-[260px] lg:max-w-[360px] xl:max-w-[407px] h-[190px] bg-[url('/images/dress-style-1.png')]"
-          />
-          <CategoryStyleCard
-            title="Formal"
-            url="/shop#formal"
-            className="md:max-w-[684px] h-[190px] bg-[url('/images/dress-style-2.png')]"
-          />
-        </motion.div>
-        <motion.div
-          initial={{ y: "100px", opacity: 0 }}
-          whileInView={{ y: "0", opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ delay: 1, duration: 0.6 }}
-          className="flex flex-col sm:flex-row md:h-[289px] space-y-5 sm:space-y-0 sm:space-x-5"
-        >
-          <CategoryStyleCard
-            title="Party"
-            url="/shop#party"
-            className="md:max-w-[684px] h-[190px] bg-[url('/images/dress-style-3.png')]"
-          />
-          <CategoryStyleCard
-            title="Gym"
-            url="/shop#gym"
-            className="md:max-w-[260px] lg:max-w-[360px] xl:max-w-[407px] h-[190px] bg-[url('/images/dress-style-4.png')]"
-          />
-        </motion.div>
-        <motion.div
-          initial={{ y: "100px", opacity: 0 }}
-          whileInView={{ y: "0", opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ delay: 1.2, duration: 0.6 }}
-          className="flex flex-col sm:flex-row md:h-[289px] space-y-4 sm:space-y-0 sm:space-x-5 my-4 sm:mb-5"
-        >
-          <CategoryStyleCard
-            title="Casual"
-            url="/shop#casual"
-            className="md:max-w-[260px] lg:max-w-[360px] xl:max-w-[407px] h-[190px] bg-[url('/images/dress-style-1.png')]"
-          />
-          <CategoryStyleCard
-            title="Formal"
-            url="/shop#formal"
-            className="md:max-w-[684px] h-[190px] bg-[url('/images/dress-style-2.png')]"
-          />
-        </motion.div>
-      </section>
-    </div>
+          
+          <CarouselContent>
+            {categories.map((cat) => (
+              <CarouselItem
+                key={cat.id}
+                className="basis-1/2 sm:basis-1/3 md:basis-1/4 lg:basis-1/5 flex flex-col items-center text-center px-4"
+              >
+                <div className="w-48 h-48 rounded-full overflow-hidden border-2 border-white shadow-lg mb-3">
+                  <Image
+                    src={cat.image}
+                    alt={cat.name}
+                    width={300}
+                    height={300}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <span className="text-white font-medium text-sm sm:text-base">
+                  {cat.name}
+                </span>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+        </Carousel>
+      </motion.div>
+    </section>
   );
 };
 
-export default Categories;
+export default CategoriesCarousel;

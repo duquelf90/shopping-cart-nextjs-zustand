@@ -2,11 +2,7 @@ import Link from "next/link";
 import LinksSection from "./LinkSection";
 import NewsLetterSection from "./NewsLetterSection";
 import { ContactSection } from "./ContactSection";
-import { cn } from "@/lib/utils";
-import { integralCF } from "@/styles/fonts";
 import { LogoSection } from "./LogoSection";
-
-
 
 const Footer = () => {
   return (

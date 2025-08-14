@@ -1,5 +1,6 @@
-'use client';
+"use client";
 
+import CategoriesCarousel from "@/components/homepage/Categories";
 import Categories from "@/components/homepage/Categories";
 import Home from "@/components/homepage/Home";
 import Reviews from "@/components/homepage/Reviews";
@@ -12,20 +13,19 @@ const HomePage = () => {
   const { fetchData, newProduct, topSelling } = useProductsStore();
   useEffect(() => {
     const loadData = async () => {
-      await fetchData();      
+      await fetchData();
     };
     loadData();
   }, [fetchData]);
-  
+
   return (
     <>
-    <Home/>
-    <div className="bg-black h-10">
-      <div className="max-w-frame mx-auto flex flex-wrap items-center justify-center md:justify-between py-5 md:py-0 sm:px-4 xl:px-0 space-x-7">
-        
+      <Home />
+      <div className="mb-[50px] sm:mb-20">
+        <CategoriesCarousel />
       </div>
-    </div>
-    <main className="my-[50px] sm:my-[72px]">
+
+      <main className="my-[50px] sm:my-[72px]">
         <ProductListSec
           title="Nuevos productos"
           data={newProduct}
@@ -40,9 +40,6 @@ const HomePage = () => {
             data={topSelling}
             viewAllLink="/shop#top-selling"
           />
-        </div>
-        <div className="mb-[50px] sm:mb-20">
-          <Categories />
         </div>
         <Reviews data={reviewsData} />
       </main>

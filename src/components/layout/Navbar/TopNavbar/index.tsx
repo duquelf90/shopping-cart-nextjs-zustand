@@ -12,7 +12,6 @@ import CartBtn from "./CartBtn";
 import { NavMenu } from "../navbar.types";
 import useFromStore from "@/lib/hooks/useFromStore";
 import { useCartStore } from "@/lib/stores/useCartStore";
-import { Icon } from "@iconify/react";
 
 const data: NavMenu = [
   {
@@ -22,25 +21,25 @@ const data: NavMenu = [
     children: [
       {
         id: 11,
-        label: "Men's clothes",
+        label: "Combos de comida",
         url: "/shop#men-clothes",
         description: "In attractive and spectacular colors and designs",
       },
       {
         id: 12,
-        label: "Women's clothes",
+        label: "Combos de carnes",
         url: "/shop#women-clothes",
         description: "Ladies, your style and tastes are important to us",
       },
       {
         id: 13,
-        label: "Kids clothes",
+        label: "Equipos para apagones",
         url: "/shop#kids-clothes",
         description: "For all ages, with happy and beautiful colors",
       },
       {
         id: 14,
-        label: "Bags and Shoes",
+        label: "Combo de aseo personal",
         url: "/shop#bag-shoes",
         description: "Suitable for men, women and all tastes and styles",
       },
@@ -63,40 +62,16 @@ const data: NavMenu = [
   {
     id: 4,
     type: "MenuItem",
-    label: "Brands",
-    url: "/shop#brands",
+    label: "Contacto",
+    url: "/#contacto",
     children: [],
   },
   {
     id: 5,
-    label: "Carnicos",
-    type: "MenuList",
-    children: [
-      {
-        id: 11,
-        label: "Carne de res",
-        url: "/shop#men-clothes",
-        description: "In attractive and spectacular colors and designs",
-      },
-      {
-        id: 12,
-        label: "Women's clothes",
-        url: "/shop#women-clothes",
-        description: "Ladies, your style and tastes are important to us",
-      },
-      {
-        id: 13,
-        label: "Kids clothes",
-        url: "/shop#kids-clothes",
-        description: "For all ages, with happy and beautiful colors",
-      },
-      {
-        id: 14,
-        label: "Bags and Shoes",
-        url: "/shop#bag-shoes",
-        description: "Suitable for men, women and all tastes and styles",
-      },
-    ],
+    type: "MenuItem",
+    label: "FAQs",
+    url: "/#faqs",
+    children: [],
   },
 ];
 

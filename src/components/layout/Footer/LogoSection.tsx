@@ -38,7 +38,7 @@ export const LogoSection = () => {
         Tu multimarket de confianza en Cuba. Productos de primera necesidad para
         toda la familia con la mejor calidad y servicio.
       </p>
-      <div className="flex items-center">
+      <div className="flex items-center md:justify-start justify-center">
         {socialsData.map((social) => (
           <Link
             href={social.url}

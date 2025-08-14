@@ -1,5 +1,7 @@
 "use client";
 
+import { Icon } from "@iconify/react";
+
 interface Props {
   isOpen: boolean;
   children: React.ReactNode;
@@ -19,22 +21,30 @@ const CartDrawer = ({ children, isOpen, onCartIconClick }: Props) => {
         }`}
       />
 
-	  {/* Drawer */}
-        <div
-          className={`fixed top-0 right-0 h-full w-80 z-30 transform transition-transform duration-500 ease-in-out ${
-            isOpen ? "translate-x-0" : "translate-x-full"
-          }`}
-          style={{
-			boxShadow: 'rgba(0, 0, 0, 0.4) 0px 30px 30px',
-		  }}
-        >
-          <aside className="h-full overflow-y-auto bg-white">
-            <header className="bg-gray-900 text-white py-4 flex items-center justify-end px-4 h-14">
-                <div onClick={onCartIconClick} className="hover:opacity-80">Close</div>
-            </header>
-            <main className="p-4 text-black">{children}</main>
-          </aside>
-        </div>
+      {/* Drawer */}
+      <div
+        className={`fixed top-0 right-0 h-full w-80 z-30 transform transition-transform duration-500 ease-in-out ${
+          isOpen ? "translate-x-0" : "translate-x-full"
+        }`}
+        style={{
+          boxShadow: "rgba(0, 0, 0, 0.4) 0px 30px 30px",
+        }}
+      >
+        <aside className="h-full overflow-y-auto bg-white">
+          <header className="bg-gray-900 text-white py-4 flex items-center justify-end px-4 h-14">
+            <div onClick={onCartIconClick} className="hover:opacity-80">
+              {" "}
+              <Icon
+                icon="ic:baseline-close"
+                width="24"
+                height="24"
+                color="white"
+              />
+            </div>
+          </header>
+          <main className="p-4 text-black">{children}</main>
+        </aside>
+      </div>
     </>
   );
 };

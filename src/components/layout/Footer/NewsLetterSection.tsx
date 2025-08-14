@@ -26,8 +26,8 @@ const NewsLetterSection = () => {
             <InputGroup.Input
               type="email"
               name="email"
-              placeholder="Enter your email address"
-              className="bg-transparent placeholder:text-black/40 placeholder:text-sm sm:placeholder:text-base"
+              placeholder="Dejanos tu correo electronico"
+              className="bg-transparent placeholder:text-black/40 placeholder:text-sm sm:placeholder:text-base text-center"
             />
           </InputGroup>
           <Button
@@ -36,7 +36,7 @@ const NewsLetterSection = () => {
             aria-label="Subscribe to Newsletter"
             type="button"
           >
-            Subscribete a nuestro Newsletter
+            Subscribete a hoy
           </Button>
         </div>
       </div>

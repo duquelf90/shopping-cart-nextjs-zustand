@@ -1,11 +1,12 @@
 import React, { ReactNode, useEffect, useState } from "react";
 import Head from "next/head";
 import type { Metadata } from "next";
-import Header from "@/components/ui/Header";
 import Footer from "@/components/layout/Footer/Footer";
 import Cart from "@/components/minicart/Cart";
 import CartDrawer from "@/components/minicart/CartDrawer";
 import Providers from "./provider";
+import TopBanner from "@/components/layout/Banner/TopBanner";
+import TopNavbar from "@/components/layout/Navbar/TopNavbar";
 
 interface LayoutProps {
   title?: string;
@@ -29,8 +30,9 @@ const Layout: React.FC<LayoutProps> = ({ title, children }) => {
         <meta name="description" content="Descripción de mi tienda" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <TopBanner />
       <Providers>
-        <Header onCartIconClick={handleCartIconClick} />
+        <TopNavbar onCartIconClick={handleCartIconClick} />
         <CartDrawer isOpen={isDrawerOpen} onCartIconClick={handleCartIconClick}>
           <Cart onClose={handleCartIconClick}/>
         </CartDrawer>

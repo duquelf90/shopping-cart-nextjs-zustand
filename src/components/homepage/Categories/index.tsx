@@ -60,7 +60,7 @@ const Categories = () => {
           initial={{ y: "100px", opacity: 0 }}
           whileInView={{ y: "0", opacity: 1 }}
           viewport={{ once: true }}
-          transition={{ delay: 1.6, duration: 0.6 }}
+          transition={{ delay: 1.2, duration: 0.6 }}
           className="flex flex-col sm:flex-row md:h-[289px] space-y-4 sm:space-y-0 sm:space-x-5 my-4 sm:mb-5"
         >
           <CategoryStyleCard

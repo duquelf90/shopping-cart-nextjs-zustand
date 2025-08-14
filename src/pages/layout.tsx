@@ -4,9 +4,9 @@ import type { Metadata } from "next";
 // import styles from "../styles/Layout.module.css"; // Estilos opcionales
 import Header from "@/components/ui/Header";
 import Footer from "@/components/layout/Footer/Footer";
-import { NotificationProvider } from "@/lib/context/NotificationContext";
 import Cart from "@/components/minicart/Cart";
-import CartDrawer from "@/components/ui/CartDrawer";
+import CartDrawer from "@/components/minicart/CartDrawer";
+import Providers from "./provider";
 
 interface LayoutProps {
   title?: string;
@@ -30,16 +30,19 @@ const Layout: React.FC<LayoutProps> = ({ title, children }) => {
         <meta name="description" content="Descripción de mi tienda" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <NotificationProvider>
+      <Providers>
         <Header onCartIconClick={handleCartIconClick} />
 
         <CartDrawer isOpen={isDrawerOpen} onCartIconClick={handleCartIconClick}>
           <Cart />
         </CartDrawer>
         <main className="pb-10">
-          <div className="max-w-frame mx-auto px-4 xl:px-0 py-5">{children}</div></main>
+          {/* <div className="max-w-frame mx-auto px-4 xl:px-0 py-5"> */}
+            {children}
+          {/* </div> */}
+        </main>
         <Footer />
-      </NotificationProvider>
+      </Providers>
     </div>
   );
 };

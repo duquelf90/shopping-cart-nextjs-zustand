@@ -1,7 +1,7 @@
-import { Product } from "../../types/types";
 import Image from "next/image";
 import { useCartStore } from "@/lib/stores/useCartStore";
 import { Icon } from "@iconify/react";
+import { Product } from "@/types/types";
 
 interface Props {
   product: Product;
@@ -17,7 +17,7 @@ export default function CartItem({
   const removeFromCart = useCartStore((state) => state.removeFromCart);
 
   return (
-    <li className="flex py-6" key={product.id}>
+    <li className="flex py-2" key={product.id}>
       <div className="size-24 shrink-0 overflow-hidden">
         <Image
           src={product.thumbnail}

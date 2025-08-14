@@ -17,16 +17,14 @@ const MobileFilters = () => {
             <Icon icon="mdi:slider" width="24" height="24"></Icon>
           </div>
         </DrawerTrigger>
-        <DrawerContent className="max-h-[90%] bg-white">
-          <DrawerHeader>
-            <div className="flex items-center justify-between">
-              <span className="font-bold text-black text-xl">Filtros</span>
+        <DrawerContent className="max-h-[90%] bg-white rounded-t-[20px] overflow-hidden shadow-xl">
+          <DrawerHeader className="sticky top-0 z-10 bg-white px-5 flex items-center justify-between">
+              <div className="font-bold text-black text-xl">Categorias</div>
               <Icon icon="mdi:slider" width="24" height="24"></Icon>
-            </div>
             <DrawerTitle className="hidden">filters</DrawerTitle>
             <DrawerDescription className="hidden">filters</DrawerDescription>
           </DrawerHeader>
-          <div className="max-h-[90%] overflow-y-auto w-full px-5 md:px-6 py-5 space-y-5 md:space-y-6">
+          <div className="overflow-y-auto max-h-[calc(90vh-64px)] px-5 py-5 space-y-5 scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-transparent">
             <Filters />
           </div>
         </DrawerContent>

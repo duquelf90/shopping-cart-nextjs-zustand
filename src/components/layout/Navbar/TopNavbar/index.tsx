@@ -49,14 +49,14 @@ const data: NavMenu = [
   {
     id: 2,
     type: "MenuItem",
-    label: "On Sale",
+    label: "Nuevos Productos",
     url: "/shop#on-sale",
     children: [],
   },
   {
     id: 3,
     type: "MenuItem",
-    label: "New Arrivals",
+    label: "Mas vendidos",
     url: "/shop#new-arrivals",
     children: [],
   },
@@ -138,12 +138,7 @@ const TopNavbar = ({ onCartIconClick }: Props) => {
           </NavigationMenuList>
         </NavigationMenu>
         <div className="flex items-center">
-          <div className="relative mr-[14px] p-1" onClick={onCartIconClick}>
-            <Icon icon="iconoir:cart" width="24" height="24" />
-            <span className="border bg-black text-white rounded-full w-fit-h-fit px-1 text-xs absolute -top-3 left-1/2 -translate-x-1/2">
-              {cart?.length}
-            </span>
-          </div>
+          <CartBtn onCartIconClick={onCartIconClick} count={cart?.length} />
         </div>
       </div>
     </nav>

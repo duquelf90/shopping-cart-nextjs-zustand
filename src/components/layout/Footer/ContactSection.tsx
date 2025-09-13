@@ -13,11 +13,11 @@ export const ContactSection = () => {
         </li>
         <li className="capitalize text-black/60 text-sm md:text-base mb-4 w-fit">
           {/* <i className="fas fa-envelope text-[var(--primary-color)]" aria-hidden="true"></i> */}
-          <span>info@mitienda.cu</span>
+          <span>info@llpmultiservice.com</span>
         </li>
         <li className="capitalize text-black/60 text-sm md:text-base mb-4 w-fit">
           {/* <i className="fas fa-map-marker-alt text-[var(--primary-color)]" aria-hidden="true"></i> */}
-          <span>La Habana, Cuba</span>
+          <span>330 e7 st Apto 101,33010, Hialeah, FL</span>
         </li>
         <li className="capitalize text-black/60 text-sm md:text-base mb-4 w-fit">
           {/* <i className="fas fa-clock text-[var(--primary-color)]" aria-hidden="true"></i> */}

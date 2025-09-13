@@ -55,9 +55,9 @@ const ConfirmPage = () => {
               <br />
               Realizar la transferencia a la cuenta:
               <br />
-              ejemplo@empresa.com
+              info@llpmultiservice.com
             </p>
-            <p>nombre de cuenta: Pedro Navaja</p>
+            <p>nombre de cuenta: Pedro Gonzales</p>
             <p>
               Una vez realizada la transferencia envíe una captura a nuestro
               WhatsApp al número{" "}
